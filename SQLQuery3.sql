@@ -1,0 +1,1 @@
+﻿create table Car(patates int );

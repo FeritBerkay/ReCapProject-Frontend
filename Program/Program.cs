@@ -1,5 +1,6 @@
 ﻿using Bussiness.Concrete;
-using DataAccess.Concrete.InMemory;
+using DataAccess.Concrete.EntityFramework;
+//using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
 using System;
 
@@ -9,54 +10,166 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            CarManager carManager = new CarManager(new InMemoryCarDal());
-            Console.WriteLine("Descriptionu tesla model 3 olanı cagırdık");
-            foreach (var car in carManager.Any("Tesla Model X"))
+            CarManager carManager = new CarManager(new EfCarDal());
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+            ColorManager colorManager = new ColorManager(new EfColorDal());
+
+
+            GetByBrandId(3, brandManager);
+            GetByCarId(3,carManager);
+            GetByCategoryId(1, categoryManager);
+            GetByColorId(2, colorManager);
+
+
+
+
+            GetAllCars(carManager);
+
+
+
+            //#########################################_Brand Methods_#########################################
+            static void AddBrand(Brand brand, BrandManager brandManager)
             {
-                Console.WriteLine(car.Desciription);
+                brandManager.Add(brand);
             }
-            Console.WriteLine("Yeni bir araba ekleyip brandıd sini cagırdık.");
-            carManager.Add(new Entities.Concrete.Car { BrandId = 23542, CarId = 4, CategoryId = 3, ColorId = 1, DailyPrice = 2300, Desciription = "Doblo", ModelYear = 2002 });
-            foreach (var car in carManager.GetAll())
+
+            static void DeleteBrand(Brand brand, BrandManager brandManager)
             {
-                if (car.BrandId == 23542)
+                brandManager.Delete(brand);
+            }
+
+            static void UpdateBrand(Brand brand, BrandManager brandManager)
+            {
+                brandManager.Update(brand);
+            }
+
+            static void GetAllBrand(BrandManager brandManager)
+            {
+                foreach (var brand in brandManager.GetAll().Data)
                 {
-                    Console.WriteLine(car.BrandId);
+                    Console.WriteLine(brand.BrandName);
                 }
             }
-            //Ekledigimiz arabayı sildik
-            Car delete = new Car() { CarId = 4 };
-            carManager.Delete(delete);
-
-            Console.WriteLine("Id si 2 olan arabanın CarID sini cagırdık");
-            foreach (var car in carManager.GetByID(2))
+            static void GetByBrandId(int brandId, BrandManager brandManager)
             {
-                Console.WriteLine(car.CarId);
+                var getBrand = brandManager.GetById(brandId).Data;
+                Console.WriteLine(getBrand.BrandName);
             }
 
-            Console.WriteLine("Yeni bir kar nesnesi olusturup onu CarId sini esit olana Updateledik. Ve onun dcs ni cagırdık");
-            Car car1 = new Car { CarId = 1, BrandId = 5, CategoryId = 2, ColorId = 1, DailyPrice = 2500, Desciription = "Audi a3", ModelYear = 2008, };
-            carManager.Update(car1);
-
-            //"Car Idsi 1 olan yeni ekledigimiz arabanın desciriptionsunu cagırdık."
-            foreach (var car in carManager.GetAll())
+            //#########################################_Category Methods_#########################################
+            static void AddCategory(Category category, CategoryManager categoryManager)
             {
-                if (car.CarId == 1)
+                categoryManager.Add(category);
+            }
+
+            static void DeleteCategory(Category category, CategoryManager categoryManager)
+            {
+                categoryManager.Delete(category);
+            }
+
+            static void UpdateCategory(Category category, CategoryManager categoryManager)
+            {
+                categoryManager.Update(category);
+            }
+
+            static void GetAllCategories(CategoryManager categoryManager)
+            {
+                foreach (var category in categoryManager.GetAll().Data)
+                {
+                    Console.WriteLine(category.CategoryName);
+                }
+            }
+            static void GetByCategoryId(int categoryId, CategoryManager categoryManager)
+            {
+                var getCaregory = categoryManager.GetById(categoryId).Data;
+                Console.WriteLine(getCaregory.CategoryName);
+            }
+
+            //########################################_Color Methods_#########################################
+            static void AddColor(Color color, ColorManager colorManager)
+            {
+                colorManager.Add(color);
+            }
+
+            static void DeleteColor(Color color, ColorManager colorManager)
+            {
+                colorManager.Delete(color);
+            }
+
+            static void UpdateColor(Color color, ColorManager colorManager)
+            {
+                colorManager.Update(color);
+            }
+
+            static void GetAllColors(ColorManager colorManager)
+            {
+                foreach (var color in colorManager.GetAll().Data)
+                {
+                    Console.WriteLine(color.ColorName);
+                }
+            }
+
+            static void GetByColorId(int colorId, ColorManager colorManager)
+            {
+                var getColor = colorManager.GetById(colorId).Data;
+                Console.WriteLine(getColor.ColorName);
+                
+            }
+
+
+            //#########################################_Car Methods_#########################################
+            static void AddCar(Car car, CarManager carManager)
+            {
+                carManager.Add(car);
+            }
+
+            static void DeleteCar(Car car, CarManager carManager)
+            {
+                carManager.Delete(car);
+            }
+
+            static void UpdateCar(Car car, CarManager carManager)
+            {
+                carManager.Update(car);
+            }
+
+            static void GetAllCars(CarManager carManager)
+            {
+                foreach (var car in carManager.GetAll().Data)
                 {
                     Console.WriteLine(car.Desciription);
                 }
             }
-            Console.WriteLine("Car Idsi 2 olan arabanın desciriptionunu cagırdık");
-            foreach (var car in carManager.Find(2))
+            static void GetCarDetails(CarManager carManager) 
             {
-                Console.WriteLine(car.Desciription);
-            }
-            Console.WriteLine("Desciriptionunun icerisinde Tesla kelimesi gecenlerin CarIdlerini azalan DailyPrice ye göre cagırdık");
-            foreach (var car in carManager.FindAll("Tesla"))
+                foreach (var car in carManager.GetCarDetails().Data)
+                {
+                    Console.WriteLine("CarName=" + car.CarName + " CategoryName=" + car.CategoryName + " BrandName=" + car.BrandName + " ColorName="
+                        + car.ColorName + " DailyPrice=" + car.DailyPrice);
+                }
+            }            
+            static void GetCarsByBrandId(CarManager carManager)
             {
-                Console.WriteLine(car.CarId);
+                foreach (var car in carManager.GetAllByBrandId(1).Data)
+                {
+                    Console.WriteLine(car.Desciription);
+                }
             }
-            carManager.Add(new Entities.Concrete.Car { CarId = 4, BrandId = 2, CategoryId = 4, ColorId = 3, DailyPrice = 20000, Desciription = "Mercedes Benze Tır", ModelYear = 2002 });
+
+            static void GetCarsByColorId(int carID,CarManager carManager)
+            {
+                foreach (var car in carManager.GetAllByColorId(carID).Data)
+                {
+                    Console.WriteLine(car.Desciription);
+                }
+            }
+
+            static void GetByCarId(int carId, CarManager carManager)
+            {
+                var getCar = carManager.GetById(carId).Data;
+                Console.WriteLine(getCar.CarName);
+            }
         }
     }
 }
