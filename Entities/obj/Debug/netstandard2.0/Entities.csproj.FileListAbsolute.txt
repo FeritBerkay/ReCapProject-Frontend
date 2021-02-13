@@ -1,0 +1,12 @@
+E:\Visual Studio 2019\ReCapProject\Entities\bin\Debug\netstandard2.0\Entities.deps.json
+E:\Visual Studio 2019\ReCapProject\Entities\bin\Debug\netstandard2.0\Entities.dll
+E:\Visual Studio 2019\ReCapProject\Entities\bin\Debug\netstandard2.0\Entities.pdb
+E:\Visual Studio 2019\ReCapProject\Entities\obj\Debug\netstandard2.0\Entities.AssemblyInfoInputs.cache
+E:\Visual Studio 2019\ReCapProject\Entities\obj\Debug\netstandard2.0\Entities.AssemblyInfo.cs
+E:\Visual Studio 2019\ReCapProject\Entities\obj\Debug\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
+E:\Visual Studio 2019\ReCapProject\Entities\obj\Debug\netstandard2.0\Entities.dll
+E:\Visual Studio 2019\ReCapProject\Entities\obj\Debug\netstandard2.0\Entities.pdb
+E:\Visual Studio 2019\ReCapProject\Entities\obj\Debug\netstandard2.0\Entities.csprojAssemblyReference.cache
+E:\Visual Studio 2019\ReCapProject\Entities\bin\Debug\netstandard2.0\Core.dll
+E:\Visual Studio 2019\ReCapProject\Entities\bin\Debug\netstandard2.0\Core.pdb
+E:\Visual Studio 2019\ReCapProject\Entities\obj\Debug\netstandard2.0\Entities.csproj.CopyComplete

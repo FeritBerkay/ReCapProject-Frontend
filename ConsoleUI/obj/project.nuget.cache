@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "VIaII7Bx42GxNZvYxVxtoplS13TxaLzCadQHIkf09Hruk5bu6Hvhelp0yA0SMypbFpAcF1cIKZ8388cQHXRNIQ==",
+  "success": true,
+  "projectFilePath": "E:\\Visual Studio 2019\\ReCapProject\\ConsoleUI\\ConsoleUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ferit\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\ferit\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,16 @@
+E:\Visual Studio 2019\ReCapProject\ConsoleUI\bin\Debug\netstandard2.0\ConsoleUI.deps.json
+E:\Visual Studio 2019\ReCapProject\ConsoleUI\bin\Debug\netstandard2.0\ConsoleUI.dll
+E:\Visual Studio 2019\ReCapProject\ConsoleUI\bin\Debug\netstandard2.0\ConsoleUI.pdb
+E:\Visual Studio 2019\ReCapProject\ConsoleUI\bin\Debug\netstandard2.0\Bussiness.dll
+E:\Visual Studio 2019\ReCapProject\ConsoleUI\bin\Debug\netstandard2.0\DataAccess.dll
+E:\Visual Studio 2019\ReCapProject\ConsoleUI\bin\Debug\netstandard2.0\Entities.dll
+E:\Visual Studio 2019\ReCapProject\ConsoleUI\bin\Debug\netstandard2.0\Bussiness.pdb
+E:\Visual Studio 2019\ReCapProject\ConsoleUI\bin\Debug\netstandard2.0\DataAccess.pdb
+E:\Visual Studio 2019\ReCapProject\ConsoleUI\bin\Debug\netstandard2.0\Entities.pdb
+E:\Visual Studio 2019\ReCapProject\ConsoleUI\obj\Debug\netstandard2.0\ConsoleUI.csprojAssemblyReference.cache
+E:\Visual Studio 2019\ReCapProject\ConsoleUI\obj\Debug\netstandard2.0\ConsoleUI.AssemblyInfoInputs.cache
+E:\Visual Studio 2019\ReCapProject\ConsoleUI\obj\Debug\netstandard2.0\ConsoleUI.AssemblyInfo.cs
+E:\Visual Studio 2019\ReCapProject\ConsoleUI\obj\Debug\netstandard2.0\ConsoleUI.csproj.CoreCompileInputs.cache
+E:\Visual Studio 2019\ReCapProject\ConsoleUI\obj\Debug\netstandard2.0\ConsoleUI.csproj.CopyComplete
+E:\Visual Studio 2019\ReCapProject\ConsoleUI\obj\Debug\netstandard2.0\ConsoleUI.dll
+E:\Visual Studio 2019\ReCapProject\ConsoleUI\obj\Debug\netstandard2.0\ConsoleUI.pdb
