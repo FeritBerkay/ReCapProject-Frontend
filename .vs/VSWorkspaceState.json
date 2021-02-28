@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Bussiness",
+    "\\Bussiness\\Concrete",
+    "\\Bussiness\\Constans",
+    "\\Bussiness\\Constans\\Messages",
+    "\\Core",
+    "\\DataAccess",
+    "\\DataAccess\\Concrete",
+    "\\DataAccess\\Concrete\\EntityFramework"
+  ],
+  "SelectedNode": "\\Bussiness\\Constans",
+  "PreviewInSolutionExplorer": false
+}
