@@ -1,0 +1,23 @@
+<!--Data loadded false iken calıs dedik.-->
+<!--Data loadded false iken calıs dedik.-->
+<div *ngIf="dataloaded==false" class="spinner-border text-info" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+<table *ngIf="dataloaded==true" class="table">
+    <thead>
+        <tr>
+            <th>CarName</th>
+            <th>Brand</th>
+            <th>Color</th>
+            <th>DailyPrice</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tr *ngFor="let car of cars">
+        <td>{{car.carName}}</td>
+        <td>{{car.brandName}}</td>
+        <td>{{car.colorName}}</td>
+        <td>{{car.dailyPrice}}</td>
+        <td>{{car.categoryName}}</td>
+    </tr>
+</table>

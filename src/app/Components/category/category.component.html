@@ -1,0 +1,13 @@
+  <table  class="table">
+    <thead>
+        <tr>
+            <th>CategoryID</th>
+            <th>CategoryName</th>
+        </tr>
+    </thead>
+    <tr *ngFor="let category of categories">
+        <td>{{category.categoryId}}</td>
+        <td>{{category.categoryName}}</td>
+    </tr>
+</table>
+

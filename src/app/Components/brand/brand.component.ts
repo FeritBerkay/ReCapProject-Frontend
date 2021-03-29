@@ -1,0 +1,26 @@
+import { Component, OnInit } from '@angular/core';
+import { Brand } from 'src/app/Models/Entities/Brand';
+import { BrandService } from 'src/app/Services/BrandService/brand.service';
+
+@Component({
+  selector: 'app-brand',
+  templateUrl: './brand.component.html',
+  styleUrls: ['./brand.component.css']
+})
+export class BrandComponent implements OnInit {
+
+  brands:Brand[]= [];
+  constructor(private brandservice:BrandService) { }
+
+  ngOnInit(): void {
+    this.getBrands();
+  }
+getBrands(){
+  this.brandservice.getBrands()
+  .subscribe(
+    response=>{
+      this.brands=response.data
+    }
+  )
+}
+}
