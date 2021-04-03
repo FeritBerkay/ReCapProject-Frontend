@@ -3,7 +3,7 @@
 <div *ngIf="dataloaded==false" class="spinner-border text-info" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
-<table *ngIf="dataloaded==true" class="table">
+<table *ngIf="dataloaded==true" class="table table-dark">
     <thead>
         <tr>
             <th>CarName</th>
@@ -13,11 +13,12 @@
             <th>Category</th>
         </tr>
     </thead>
-    <tr *ngFor="let car of cars">
+    <tr *ngFor="let car of cars" (click)="goToImage(car.carId)">
         <td>{{car.carName}}</td>
         <td>{{car.brandName}}</td>
         <td>{{car.colorName}}</td>
         <td>{{car.dailyPrice}}</td>
         <td>{{car.categoryName}}</td>
+        <td><button routerLink="/cars/car-image/{{car.carId}}" type="button" class="btn btn-outline-light">Detaya Git</button></td>
     </tr>
 </table>
