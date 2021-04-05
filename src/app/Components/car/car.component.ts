@@ -14,6 +14,7 @@ export class CarComponent implements OnInit {
 
   cars:Car[] = [];
   dataloaded = false;
+  filterText="";
   constructor(private carsService:CarService, private activatedRoute:ActivatedRoute , private router: Router) { }
   //Ctor yapısı calısınca direk calısır. Ama ctor yaısı sadece insalitize etmek icin kullanılan bir yapı. Newleme yapılır burayla karıstırma ama mantık ozunde benzer.
   //ngonit component i don yerleştirir.

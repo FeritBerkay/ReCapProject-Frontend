@@ -1,3 +1,11 @@
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Search Color</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Color Name">
+</div>
+<div *ngIf="filterText" class="alert alert-danger">
+    {{filterText}} aradınız.
+   </div>
+
 <ul class="list-group">
     <thead>
         <tr>
@@ -5,7 +13,7 @@
         </tr>
     </thead>
     <li [class]="getAllColorClass()" routerLink="colors">Get All Colors</li>
-    <li  *ngFor="let color of colors"
+    <li  *ngFor="let color of colors | colorfilter:filterText"
     (click)="setCurrentColor(color)"
     routerLink="cars/color/{{color.colorId}}"
     [class]="getCurrentColorClass(color)">{{color.colorName}}</li>

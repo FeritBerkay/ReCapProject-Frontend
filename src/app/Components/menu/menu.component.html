@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5" style="background-color:rgb(196, 152, 255);">
+            <label for="brands" >Choose a Brand: </label>
+            <br>
+            <select name="brands" id="brands">
+                <option selected>Brands</option>  
+            <option 
+             routerLink="cars/brand/{{brand.brandId}} "
+                *ngFor="let brand of brands |brandfilter:filterText" 
+                 value="brand">{{brand.brandName}}</option>
+            </select> 
+        </div>
+        <br> <br>
+        <div class="col-sm-5" style="background-color:rgb(94, 191, 255);">
+            <label for="cars" >Choose a Color: </label>
+            <br>
+            <select name="cars" id="cars">
+            <option selected>Colors</option>
+            <option 
+            *ngFor="let color of colors | colorfilter:filterText"
+            routerLink="cars/color/{{color.colorId}}">{{color.colorName}}</option>
+            </select> 
+        </div>
+    </div>
+</div>
+<br>

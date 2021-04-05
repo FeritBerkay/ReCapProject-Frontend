@@ -1,8 +1,9 @@
 <button type="button" class="btn btn-secondary" (click)="goToCars()">
   Geri
 </button>
+<h5>CARIMAGE</h5>
 
-<div id="carImageSlide" class="carousel slide" data-ride="carousel">
+<!-- <div id="carImageSlide" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner" style="height: 70vh; width: 80vh">
     <div
       *ngFor="let carImage of images; index as i; first as firstImage"
@@ -37,4 +38,42 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+</div> -->
+
+<table  class="table table-success">
+  <thead>
+      <tr>
+          <th>CarName</th>
+          <th>DailyPrice</th>
+          <th>Color</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tr *ngFor="let car of cars">
+      <td>{{car.carName}}</td>
+      <td>{{car.dailyPrice}}</td>
+      <td>{{car.colorName}}</td>
+      <td>{{car.description}}</td>
+  </tr>
+</table>
+
+<div class="row">
+<div class="col-md-8">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div [class]="setImageClass(image)" *ngFor="let image of images">
+        <img src="https://localhost:44399/{{image}}"
+          style="height: 100%; width: 100%">
+      </div>  
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 </div>
+
+

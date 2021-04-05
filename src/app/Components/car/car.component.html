@@ -3,7 +3,16 @@
 <div *ngIf="dataloaded==false" class="spinner-border text-info" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
-<table *ngIf="dataloaded==true" class="table table-dark">
+  
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Search Car</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Car Name">
+</div>
+<div *ngIf="filterText" class="alert alert-danger">
+    {{filterText}} aradınız.
+   </div>
+
+<table *ngIf="dataloaded==true" class="table table-dark" >
     <thead>
         <tr>
             <th>CarName</th>
@@ -11,14 +20,17 @@
             <th>Color</th>
             <th>DailyPrice</th>
             <th>Category</th>
+            <th></th>
         </tr>
     </thead>
-    <tr *ngFor="let car of cars" (click)="goToImage(car.carId)">
+    <tbody>
+    <tr *ngFor="let car of cars |filterpipe:filterText" (click)="goToImage(car.carId)" >
         <td>{{car.carName}}</td>
         <td>{{car.brandName}}</td>
         <td>{{car.colorName}}</td>
-        <td>{{car.dailyPrice}}</td>
+        <td>{{car.dailyPrice |vatAdded:10 |currency}}</td>
         <td>{{car.categoryName}}</td>
-        <td><button routerLink="/cars/car-image/{{car.carId}}" type="button" class="btn btn-outline-light">Detaya Git</button></td>
+        <td><button routerLink="/cars/car-image/{{car.carId}}" type="button" class="btn btn-outline-danger">Detaya Git</button></td>
     </tr>
+    </tbody>
 </table>

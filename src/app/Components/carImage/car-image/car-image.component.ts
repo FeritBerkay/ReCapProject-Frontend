@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Car } from 'src/app/Models/Entities/Car';
 import { CarImage } from 'src/app/Models/Entities/CarImage';
 import { CarImageService } from 'src/app/Services/CarImageService/car-image.service';
+import { CarService } from 'src/app/Services/CarService/car.service';
 
 @Component({
   selector: 'app-car-image',
@@ -11,12 +12,15 @@ import { CarImageService } from 'src/app/Services/CarImageService/car-image.serv
 })
 export class CarImageComponent implements OnInit {
 
+  car:Car;
   cars: Car[];
   carId: number;
-  images: CarImage[];
+  images: string[]=[];
+  currentImage:CarImage;
   imageUrl: string = 'https://localhost:44399';
 
   constructor( 
+    private carService: CarService,
     private carImageService: CarImageService,
     private activatedRoute: ActivatedRoute,
     private router: Router
@@ -26,23 +30,25 @@ export class CarImageComponent implements OnInit {
       this.activatedRoute.params.subscribe((params) => {
         if (params['carId']) {
           this.carId = params['carId'];
-          this.getCarImagesByCarId(params['carId']);
+          this.getCarDetailsByCarId(params['carId']);
         }
       });
     }
 
-    getCarImagesByCarId(carId: number) {
-    this.carImageService.getCarImagesByCarId(carId).subscribe((response) => {
-      this.images=response.data
-    });
-}
-getCarImages(){
-  this.carImageService.getAllCarImages().subscribe(response=>{
-    this.images=response.data;
-  })
-}
-
 goToCars() {
   this.router.navigate(['./cars']);
+}
+setImageClass(imagePath:string){
+  if(imagePath === this.images[0]){
+    return "carousel-item active"
+  }else{
+    return "carousel-item"
+  }
+}
+getCarDetailsByCarId(carId: number) {
+  this.carService.getCarDetailsByCarId(carId).subscribe((response) => {
+    this.cars = response.data;
+    this.images = response.data[0].images
+  });
 }
 }
