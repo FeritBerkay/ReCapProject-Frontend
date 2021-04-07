@@ -1,27 +1,46 @@
-<div class="container">
+ <div class="filter" align="center">
     <div class="row">
-        <div class="col-sm-5" style="background-color:rgb(196, 152, 255);">
+        <div class="col-md-5" >
             <label for="brands" >Choose a Brand: </label>
             <br>
-            <select name="brands" id="brands">
-                <option selected>Brands</option>  
+            <select class="form-select" id="brandselect" [(ngModel)]="currentBrandId" >
+                <option 
+                [ngValue]="undefined" disabled  selected> 
+               ### Choose Brand ###
+            </option> 
             <option 
-             routerLink="cars/brand/{{brand.brandId}} "
-                *ngFor="let brand of brands |brandfilter:filterText" 
-                 value="brand">{{brand.brandName}}</option>
+                *ngFor="let brand of brands" [value]="brand.brandId" 
+                 [selected]="setCurrentBrand(brand.brandId)">{{brand.brandName}}</option>
             </select> 
-        </div>
-        <br> <br>
-        <div class="col-sm-5" style="background-color:rgb(94, 191, 255);">
+        </div> 
+        
+        <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+        <div class="col-md-5" >
             <label for="cars" >Choose a Color: </label>
             <br>
-            <select name="cars" id="cars">
-            <option selected>Colors</option>
-            <option 
-            *ngFor="let color of colors | colorfilter:filterText"
-            routerLink="cars/color/{{color.colorId}}">{{color.colorName}}</option>
+            <select class="form-select" id="colorselect" [(ngModel)]="currentColorId"  >
+                <option 
+                    [ngValue]="undefined" disabled  selected> 
+                        ### Choose Color ###
+                    </option>
+                    <option 
+                    *ngFor="let color of colors" 
+                    [value]="color.colorId" 
+                    [selected]="setCurrentColor(color.colorId)">
+                    {{color.colorName}}
+                </option>
             </select> 
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 mb-3" >
+            <br>
+            <button class="btn btn-success"
+            routerLink="/cars/filter/{{currentBrandId}}/{{currentColorId}}">filitrele</button>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 mb-3" >
+            <br>
+            <button class="btn btn-danger"
+            routerLink="/cars">Temizle</button>
         </div>
     </div>
 </div>
-<br>
+<br> 

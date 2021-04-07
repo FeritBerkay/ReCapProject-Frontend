@@ -1,0 +1,12 @@
+#colorselect, #brandselect{
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+    
+}
+
+.filter{
+    background-color:turquoise;
+    height: 150px;
+    border-radius: 5px;
+}

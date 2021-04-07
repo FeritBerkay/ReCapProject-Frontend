@@ -1,0 +1,63 @@
+<button type="button" class="btn btn-secondary" (click)="goToCars()">Geri</button>
+<h3 class="d-flex justify-content-center">CAR DETAILS</h3>  
+ 
+<div class="row ml-0 mr-0">
+  <div class="col-md-8 offset-md-2 table-animations">
+      <div *ngFor="let car of cars"  class="mt-4">
+          <table class="table table-bordered">
+              <tr>
+                  <th>Marka :</th>
+                  <td>{{car.brandName}}</td>
+              </tr>
+              <tr>
+                  <th>Renk :</th>
+                  <td>{{car.colorName}}</td>
+              </tr>
+              <tr>
+                  <th>Kiralama Fiyatı :</th>
+                  <td>{{car.dailyPrice |currency}}</td>
+              </tr>
+              <tr>
+                  <th>Model Yılı :</th>
+                  <td>{{car.modelYear}}</td>
+              </tr>
+              <tr>
+                  <th>Açıklama :</th>
+                  <td>{{car.description}}</td>
+              </tr>
+          </table>
+
+          <button 
+          (click)="isCarAvailable(car.carId)"
+          
+          routerLink="/rental/add/{{car.carId}}"
+          class="btn btn-outline-success">Kirala</button>
+          
+          <div *ngIf="showAlert" class="alert alert-danger mt-5" role="alert">
+              Araç başkası tarafından kiralık durumdadır!
+            </div>
+      </div>
+
+  <div class="row">
+  <div class="col-md-8">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div [class]="setImageClass(image)" *ngFor="let image of images">
+          <img src="https://localhost:44399/{{image}}"
+            style="height: 100%; width: 100%">
+        </div>  
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+ 
+
+  
+  
+  

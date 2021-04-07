@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarComponent } from './Components/car/car.component';
 import { CategoryComponent } from './Components/category/category.component';
-import {FormsModule} from "@angular/forms"
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 import { NaviComponent } from './Components/navi/navi.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,6 +19,9 @@ import { FilterpipePipe } from './Pipes/filterpipe.pipe';
 import { BrandfilterPipe } from './Pipes/brandfilter.pipe';
 import { ColorfilterPipe } from './Pipes/colorfilter.pipe';
 import { MenuComponent } from './Components/menu/menu.component';
+import { CardeatilComponent } from './Components/cardetail/cardeatil.component';
+import { RentalAddComponent } from './Components/rental/rental-add/rental-add/rental-add.component';
+import { PaymentComponent } from './Components/Payment/payment/payment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,13 +37,17 @@ import { MenuComponent } from './Components/menu/menu.component';
     FilterpipePipe,
     BrandfilterPipe,
     ColorfilterPipe,
-    MenuComponent
+    MenuComponent,
+    CardeatilComponent,
+    RentalAddComponent,
+    PaymentComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule
   ],
   providers: [],

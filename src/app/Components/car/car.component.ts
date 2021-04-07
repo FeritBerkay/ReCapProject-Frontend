@@ -57,4 +57,13 @@ export class CarComponent implements OnInit {
   goToImage(carId: number) {
     this.router.navigate(['./carimage', carId]);
   }
+  getCarImage(car:Car){
+
+    if(car.images){
+      return car.images
+    }
+    else{
+      return 'default.jpg'
+    }
+  }
 }

@@ -14,12 +14,15 @@ export class MenuComponent implements OnInit {
   colors: Color[];
   brands: Brand[];
   filterText="";
+  currentBrandId:number;
+  currentColorId:number;
   constructor(private brandService: BrandService, private colorService: ColorService) { }
 
   ngOnInit(): void {
 
     this.getColors();
     this.getBrands();
+    console.log(this.currentColorId)
   }
   getColors() {
     this.colorService.getColors()
@@ -29,6 +32,12 @@ export class MenuComponent implements OnInit {
     this.brandService.getBrands()
     .subscribe(response => { this.brands = response.data });
 
+  }
+  setCurrentBrand(brandId:number){
+    return(brandId===this.currentBrandId?true:false)
+  }
+  setCurrentColor(colorId:number){
+    return(colorId===this.currentColorId?true:false)
   }
 
 }

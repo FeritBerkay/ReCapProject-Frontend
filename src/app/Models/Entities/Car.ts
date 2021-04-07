@@ -6,6 +6,8 @@ export interface Car{
     categoryName: string;
     modelYear: number;
     dailyPrice: number;
+    colorId:number;
+    status?:boolean;
     description: string;
     images: string[];
 }
