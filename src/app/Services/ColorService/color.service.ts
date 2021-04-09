@@ -23,15 +23,15 @@ export class ColorService {
     return this.httpClient.get<ItemResponseModel<Color>>(newPath);
   }
   add(color:Color):Observable<ResponseModule>{
-    let newPath = this.apiUrl + "add"
+    let newPath = this.apiUrl + "/add"
     return this.httpClient.post<ResponseModule>(newPath, color);
   }
   delete(color:Color):Observable<ResponseModule>{
-    let newPath = this.apiUrl + "delete"
+    let newPath = this.apiUrl + "/delete"
     return this.httpClient.post<ResponseModule>(newPath, color);
   }
   update(color:Color):Observable<ResponseModule>{
-    let newPath = this.apiUrl + "update"
+    let newPath = this.apiUrl + "/update"
     return this.httpClient.post<ResponseModule>(newPath, color);
   }
 }

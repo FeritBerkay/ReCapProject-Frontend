@@ -8,7 +8,7 @@ import { ColorService } from 'src/app/Services/ColorService/color.service';
   templateUrl: './color-all.component.html',
   styleUrls: ['./color-all.component.css']
 })
-export class ColorALlComponent implements OnInit {
+export class ColorAllComponent implements OnInit {
 
   colors : Color[] = [];
   constructor(private colorService : ColorService, private tostrService:ToastrService) { }

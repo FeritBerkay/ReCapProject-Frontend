@@ -32,7 +32,7 @@ import { CarUpdateComponent } from './Components/car/carUpdate/car-update/car-up
 import { BrandUpdateComponent } from './Components/brand/brandUpdate/brand-update/brand-update.component';
 import { BrandAllComponent } from './Components/brand/brandAll/brand-all/brand-all.component';
 import { CarAllComponent } from './Components/car/carAll/car-all/car-all.component';
-import { ColorALlComponent } from './Components/color/colorAll/color-all/color-all.component';
+import { ColorAllComponent } from './Components/color/colorAll/color-all/color-all.component';
 import { ColorUpdateComponent } from './Components/color/colorUpdate/color-update/color-update.component'
 
 @NgModule({
@@ -61,7 +61,7 @@ import { ColorUpdateComponent } from './Components/color/colorUpdate/color-updat
     BrandUpdateComponent,
     BrandAllComponent,
     CarAllComponent,
-    ColorALlComponent,
+    ColorAllComponent,
     ColorUpdateComponent
 
   ],

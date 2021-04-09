@@ -25,11 +25,11 @@ export class MenuComponent implements OnInit {
     console.log(this.currentColorId)
   }
   getColors() {
-    this.colorService.getColors()
+    this.colorService.getAllColors()
       .subscribe(response => { this.colors = response.data });
   }
   getBrands() {
-    this.brandService.getBrands()
+    this.brandService.getAllBrands()
     .subscribe(response => { this.brands = response.data });
 
   }

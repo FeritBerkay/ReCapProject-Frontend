@@ -53,6 +53,7 @@ export class CarUpdateComponent implements OnInit {
   getCarById(carId:number){
     this.carService.getCarsByCarId(carId).subscribe(response =>{
       this.car = response.data;
+      console.log(response.data)
     })
   }
   updateCar(){
