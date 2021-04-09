@@ -1,0 +1,24 @@
+<p>brand-all works!</p>
+<button type="button" class="btn btn-secondary" routerLink="">
+    Geri
+  </button>
+<table class="table table-bordered table-condensed table-hover" >
+    <thead class="thead-dark">
+        <tr>
+            <th>BrandId</th>
+            <th>Brand</th>
+            <th>Buttons</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let brand of brands">
+          <td>{{brand.brandId}}</td>
+          <td>{{ brand.brandName }}</td>
+          <td class="operations">
+            <button class="btn btn-info" routerLink="/brands/update/{{brand.brandId}}" >Update</button>
+            <button class="btn btn-primary" (click)="deleteBrand(brand)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+</table>
+<!-- scope="col"-->

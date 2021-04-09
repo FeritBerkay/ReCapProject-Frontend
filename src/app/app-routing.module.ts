@@ -1,15 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BrandComponent } from './Components/brand/brand.component';
+import { BrandAllComponent } from './Components/brand/brandAll/brand-all/brand-all.component';
 import { CarComponent } from './Components/car/car.component';
 import { CardeatilComponent } from './Components/cardetail/cardeatil.component';
 import { CarImageComponent } from './Components/carImage/car-image/car-image.component';
+import { BrandUpdateComponent} from './Components/brand/brandUpdate/brand-update/brand-update.component'
 import { CategoryComponent } from './Components/category/category.component';
 import { ColorComponent } from './Components/color/color.component';
 import { CustomerComponent } from './Components/customer/customer.component';
 import { PaymentComponent } from './Components/Payment/payment/payment.component';
 import { RentalAddComponent } from './Components/rental/rental-add/rental-add/rental-add.component';
 import { RentalComponent } from './Components/rental/rental.component';
+import { CarAllComponent } from './Components/car/carAll/car-all/car-all.component';
+import { CarUpdateComponent } from './Components/car/carUpdate/car-update/car-update.component';
+import { CarAddComponent } from './Components/car/CarAdd/car-add/car-add.component';
+import { BrandAddComponent } from './Components/brand/brandAdd/brand-add/brand-add.component';
+import { ColorAddComponent } from './Components/color/colorAdd/color-add/color-add.component';
+import { ColorUpdateComponent } from './Components/color/colorUpdate/color-update/color-update.component';
 
 const routes: Routes = [
   {path:"" , pathMatch:"full", component:CarComponent}, 
@@ -36,6 +44,17 @@ const routes: Routes = [
   {path:"rental/:carId", component:RentalComponent},
   {path: "rental/add/:carId", component: RentalAddComponent},
   {path: "payment", component: PaymentComponent},
+  {path:"cars/add",component:CarAddComponent},
+  {path:"brands/add",component:BrandAddComponent},
+  {path:"colors/add",component:ColorAddComponent},
+  {path:"brands/update/:brandId",component:BrandUpdateComponent},
+  {path:"brandlist",component:BrandAllComponent},
+  {path:"colors/update/:colorId",component:ColorUpdateComponent},
+  {path:"colorlist",component:ColorAddComponent},
+  {path:"carlist",component:CarAllComponent},
+  {path:"cars/update/:carId",component:CarUpdateComponent}
+
+
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,18 @@ import { MenuComponent } from './Components/menu/menu.component';
 import { CardeatilComponent } from './Components/cardetail/cardeatil.component';
 import { RentalAddComponent } from './Components/rental/rental-add/rental-add/rental-add.component';
 import { PaymentComponent } from './Components/Payment/payment/payment.component';
+
+import {ToastrModule} from 'ngx-toastr';
+import { CarAddComponent } from './Components/car/CarAdd/car-add/car-add.component';
+import { ColorAddComponent } from './Components/color/colorAdd/color-add/color-add.component';
+import { BrandAddComponent } from './Components/brand/brandAdd/brand-add/brand-add.component';
+import { CarUpdateComponent } from './Components/car/carUpdate/car-update/car-update.component';
+import { BrandUpdateComponent } from './Components/brand/brandUpdate/brand-update/brand-update.component';
+import { BrandAllComponent } from './Components/brand/brandAll/brand-all/brand-all.component';
+import { CarAllComponent } from './Components/car/carAll/car-all/car-all.component';
+import { ColorALlComponent } from './Components/color/colorAll/color-all/color-all.component';
+import { ColorUpdateComponent } from './Components/color/colorUpdate/color-update/color-update.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +53,16 @@ import { PaymentComponent } from './Components/Payment/payment/payment.component
     MenuComponent,
     CardeatilComponent,
     RentalAddComponent,
-    PaymentComponent
+    PaymentComponent,
+    CarAddComponent,
+    ColorAddComponent,
+    BrandAddComponent,
+    CarUpdateComponent,
+    BrandUpdateComponent,
+    BrandAllComponent,
+    CarAllComponent,
+    ColorALlComponent,
+    ColorUpdateComponent
 
   ],
   imports: [
@@ -48,7 +70,11 @@ import { PaymentComponent } from './Components/Payment/payment/payment.component
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass:"toast-bottom-right"
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

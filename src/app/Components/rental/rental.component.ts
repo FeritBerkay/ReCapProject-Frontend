@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/Models/Entities/Car';
 import { Customer } from 'src/app/Models/Entities/Customer';
 import { Rental } from 'src/app/Models/Entities/Rental';
@@ -28,7 +29,7 @@ export class RentalComponent implements OnInit {
   constructor(
     private customerService: CustomerService,
     private router: Router,
-    //private toastrService: ToastrService,
+    private toastrService: ToastrService,
     private datePipe: DatePipe,
     private activatedRoute: ActivatedRoute) { }
 
