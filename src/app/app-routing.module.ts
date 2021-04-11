@@ -19,6 +19,9 @@ import { BrandAddComponent } from './Components/brand/brandAdd/brand-add/brand-a
 import { ColorAddComponent } from './Components/color/colorAdd/color-add/color-add.component';
 import { ColorUpdateComponent } from './Components/color/colorUpdate/color-update/color-update.component';
 import { ColorAllComponent } from './Components/color/colorAll/color-all/color-all.component';
+import { RegisterComponent } from './Components/register/register.component';
+import { LoginComponent } from './Components/login/login.component';
+import { ProfileComponent } from './Components/profile/profile/profile.component';
 
 const routes: Routes = [
   {path:"" , pathMatch:"full", component:CarComponent}, 
@@ -53,7 +56,10 @@ const routes: Routes = [
   {path:"colors/update/:colorId",component:ColorUpdateComponent},
   {path:"colorlist",component:ColorAllComponent},
   {path:"carlist",component:CarAllComponent},
-  {path:"cars/update/:carId",component:CarUpdateComponent}
+  {path:"cars/update/:carId",component:CarUpdateComponent},
+  {path:"register",component:RegisterComponent},
+  {path:"login",component:LoginComponent},
+  {path:"profile",component:ProfileComponent}
 
 
 ];

@@ -33,7 +33,10 @@ import { BrandUpdateComponent } from './Components/brand/brandUpdate/brand-updat
 import { BrandAllComponent } from './Components/brand/brandAll/brand-all/brand-all.component';
 import { CarAllComponent } from './Components/car/carAll/car-all/car-all.component';
 import { ColorAllComponent } from './Components/color/colorAll/color-all/color-all.component';
-import { ColorUpdateComponent } from './Components/color/colorUpdate/color-update/color-update.component'
+import { ColorUpdateComponent } from './Components/color/colorUpdate/color-update/color-update.component';
+import { RegisterComponent } from './Components/register/register.component';
+import { LoginComponent } from './Components/login/login.component';
+import { ProfileComponent } from './Components/profile/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -62,8 +65,10 @@ import { ColorUpdateComponent } from './Components/color/colorUpdate/color-updat
     BrandAllComponent,
     CarAllComponent,
     ColorAllComponent,
-    ColorUpdateComponent
-
+    ColorUpdateComponent,
+    RegisterComponent,
+    LoginComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
