@@ -12,7 +12,7 @@
             <th>ColorName</th>
         </tr>
     </thead>
-    <li [class]="getAllColorClass()" routerLink="colors">Get All Colors</li>
+    <li [class]="getAllColorClass()" routerLink="colors">Get All Cars</li>
     <li  *ngFor="let color of colors | colorfilter:filterText"
     (click)="setCurrentColor(color)"
     routerLink="cars/color/{{color.colorId}}"

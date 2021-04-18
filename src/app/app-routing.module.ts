@@ -7,7 +7,6 @@ import { CardeatilComponent } from './Components/cardetail/cardeatil.component';
 import { CarImageComponent } from './Components/carImage/car-image/car-image.component';
 import { BrandUpdateComponent} from './Components/brand/brandUpdate/brand-update/brand-update.component'
 import { CategoryComponent } from './Components/category/category.component';
-import { ColorComponent } from './Components/color/color.component';
 import { CustomerComponent } from './Components/customer/customer.component';
 import { PaymentComponent } from './Components/Payment/payment/payment.component';
 import { RentalAddComponent } from './Components/rental/rental-add/rental-add/rental-add.component';
@@ -22,6 +21,7 @@ import { ColorAllComponent } from './Components/color/colorAll/color-all/color-a
 import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
 import { ProfileComponent } from './Components/profile/profile/profile.component';
+import { ColorComponent } from './Components/color/color.component';
 
 const routes: Routes = [
   {path:"" , pathMatch:"full", component:CarComponent}, 
@@ -35,13 +35,12 @@ const routes: Routes = [
   {path:"cars/car-image/:carId", component:CardeatilComponent},
   {path:"cars/filter/:brandId/:colorId",component:CarComponent},
   {path:"cars/filter/:colorId",component:CarComponent},
-  {path:"" , pathMatch:"full", component:CarComponent},
   {path:"cars",component:CarComponent},
   {path:"cars/brand/:brandId", component:CarComponent},
   {path:"cars/color/:colorId", component:CarComponent},
   {path:"cars/brand/:brandId/color:colorId", component:CarComponent},
   {path:"brands",component:BrandComponent},
-  {path:"colors",component:ColorComponent},
+  {path:"colors", component:ColorComponent},
   {path:"customers",component:CustomerComponent},
   {path:"rentals",component:RentalComponent},
   {path:"cars/filter/:brandId/:colorId",component:CarComponent},

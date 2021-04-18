@@ -6,23 +6,36 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/cars']">Home</a>
+          <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/cars']" style="background-color: cornsilk;">Home</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" *ngIf="checkToEmail()==true">
-            Hesap
-          </a>
+          <a
+          class="nav-link dropdown-toggle text-light"
+          id="navbarDropdown"
+          role="button"
+          style="background-color: black;"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          *ngIf="checkIfLogin()==true"  
+        >
+          {{ user?.firstName }}
+          {{ user?.lastName }}
+        </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li (click)="logout()"> <small [routerLink]="['/cars']" class="fa fa-user" *ngIf="checkToEmail()==true">Logout</small></li>
+            <li (click)="logout()"> <small [routerLink]="['/cars']" class="fa fa-user" *ngIf="checkIfLogin()==true">Logout</small></li>
             <li><small [routerLink]="['/profile']">Account</small></li>
+
           </ul>
         </li>
       </ul>
+        <button class="nav-link active btn-warning"  routerLink="cars"><b>Arabalar</b></button>
+          <button class="nav-link active btn-success"  routerLink="brands"><b>Markalar</b></button>
+          <button class="nav-link active btn-danger"  routerLink="colors"><b>Renkler</b></button>
       <form class="d-flex">
           <button type="button" class="nav-link active btn-primary" routerLink="login">Login</button> <br>
       </form>
     </div>
-    <ul class="nav navbar-nav ml-auto" *ngIf="checkToEmail()==true">
+    <!-- <ul class="nav navbar-nav ml-auto" *ngIf="checkToEmail()==true">
       <li class="nav-item dropdown">
         <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">
           <i class="fa fa-user">
@@ -35,7 +48,7 @@
             <a href="" class="dropdown-item" (click)="logout()"  ><i class="fa fa-sign-out"></i> Çıkış Yap</a>
         </div>
       </li>
-    </ul>
+    </ul> -->
   </div>
 </nav>
 

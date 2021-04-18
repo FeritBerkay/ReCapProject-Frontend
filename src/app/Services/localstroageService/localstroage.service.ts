@@ -13,7 +13,7 @@ export class LocalstroageService {
     this.localStorage = window.localStorage;
   }
 
-  get(key : string){
+  get(key : any){
     return this.localStorage.getItem(key);
   }
 
