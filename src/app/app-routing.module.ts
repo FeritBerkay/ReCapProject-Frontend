@@ -22,6 +22,7 @@ import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
 import { ProfileComponent } from './Components/profile/profile/profile.component';
 import { ColorComponent } from './Components/color/color.component';
+import { LoginGuard } from './Guards/login.guard';
 
 const routes: Routes = [
   {path:"" , pathMatch:"full", component:CarComponent}, 
@@ -45,7 +46,7 @@ const routes: Routes = [
   {path:"rentals",component:RentalComponent},
   {path:"cars/filter/:brandId/:colorId",component:CarComponent},
   {path:"rental/:carId", component:RentalComponent},
-  {path: "rental/add/:carId", component: RentalAddComponent},
+  {path: "rental/add/:carId", component: RentalAddComponent, canActivate:[LoginGuard]},
   {path: "payment", component: PaymentComponent},
   {path:"cars/add",component:CarAddComponent},
   {path:"brands/add",component:BrandAddComponent},

@@ -9,7 +9,7 @@ import { CategoryComponent } from './Components/category/category.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 import { NaviComponent } from './Components/navi/navi.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ColorComponent } from './Components/color/color.component';
 import { BrandComponent } from './Components/brand/brand.component';
 import { CustomerComponent } from './Components/customer/customer.component';
@@ -37,6 +37,7 @@ import { ColorUpdateComponent } from './Components/color/colorUpdate/color-updat
 import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
 import { ProfileComponent } from './Components/profile/profile/profile.component';
+import { AuthInterceptor } from './Interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,9 @@ import { ProfileComponent } from './Components/profile/profile/profile.component
       positionClass:"toast-bottom-right"
     })
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
