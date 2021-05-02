@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { Rental } from 'src/app/Models/Entities/Rental';
 import { RentalserviceService } from 'src/app/Services/rental/rentalservice.service';
 
@@ -22,7 +23,8 @@ export class PaymentComponent implements OnInit {
 
   constructor(private formBuilder:FormBuilder,
    
-    private rentalService:RentalserviceService) { }
+    private rentalService:RentalserviceService,
+    private toastrService:ToastrService) { }
 
   ngOnInit(): void {
 
@@ -69,9 +71,11 @@ export class PaymentComponent implements OnInit {
       }
            this.rentalService.addRental(this.rentalInfo)
            .subscribe((resp) => {
+            this.toastrService.success("Aracı Kiraladınız!")
             console.log(resp.message, "Aracı Kiraladınız!");
            }, respError => {
              console.log(respError)
+             this.toastrService.error("Aracı Kiralama İşlemi Başarısız Belirtilen Tarihlerde Arac Kiralanmış!")
            })
    
     }

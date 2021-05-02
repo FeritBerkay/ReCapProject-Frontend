@@ -131,5 +131,4 @@ checkIfLogin(){
        this.log=false;
       this.toastrService.error("cıkıs yaptınız");
     }
-
 }
