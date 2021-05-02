@@ -10,9 +10,9 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  //Butun hhtp isteklerini duzenleyecegiz.
+  //Butun http isteklerini duzenleyecegiz.
   constructor() {}
-  //request post işlemi(istek) next ise pakete bişi koyup yollucam denilen kısım.
+  //request post işlemi(istek) next ise pakete bişi koyup yollucam denilen kısım. (Pogaca)
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     let token = localStorage.getItem("token")
     let newRequest:HttpRequest<any>;
